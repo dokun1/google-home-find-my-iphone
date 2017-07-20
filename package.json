@@ -9,7 +9,8 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"find-my-iphone": "latest"
+		"find-my-iphone": "latest",
+		"express": "latest"
 	},
 	"repository": {
 		"type": "git",
