@@ -1,0 +1,19 @@
+{
+	"name": "google-home-find-my-iphone",
+	"version": "0.1.0",
+	"description": "A google home action that looks for your iPhone",
+	"main": "index.js",
+	"engines": {
+		"node": "8.2.0",
+		"npm": "5.3.0"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"find-my-iphone": "latest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dokun1/google-home-find-my-iphone.git"
+	},
+	"author": "David Okun"
+}
