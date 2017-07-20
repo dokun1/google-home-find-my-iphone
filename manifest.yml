@@ -1,0 +1,3 @@
+applications:
+- name: findmyiphone
+  memory: 128M
