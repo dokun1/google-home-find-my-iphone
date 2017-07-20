@@ -16,5 +16,6 @@
 		"type": "git",
 		"url": "https://github.com/dokun1/google-home-find-my-iphone.git"
 	},
+	"scripts": {"start": "node index.js"},
 	"author": "David Okun"
 }
