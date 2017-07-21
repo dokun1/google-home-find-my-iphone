@@ -10,12 +10,15 @@
 	"license": "MIT",
 	"dependencies": {
 		"find-my-iphone": "latest",
-		"express": "latest"
+		"express": "latest",
+		"body-parser": "latest"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/dokun1/google-home-find-my-iphone.git"
 	},
-	"scripts": {"start": "node index.js"},
+	"scripts": {
+		"start": "node index.js"
+	},
 	"author": "David Okun"
 }

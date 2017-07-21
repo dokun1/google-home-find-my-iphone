@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var icloud = require("find-my-iphone").findmyphone;
+var bodyParser = require('body-parser');
 
 icloud.apple_id = process.env.APPLE_ID;
 icloud.password = process.env.APPLE_PASSWORD;
@@ -8,9 +9,19 @@ icloud.password = process.env.APPLE_PASSWORD;
 var homeLatitude = process.env.HOME_LATITUDE;
 var homeLongitude = process.env.HOME_LONGITUDE;
 
-app.get('/status/:forceAlert', function(req, res) {
-    var forceAlert = req.params.forceAlert;
-    icloud.getDevices(function(error, devices) {
+var authToken = process.env.AUTH_TOKEN;
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+app.post('/status', function(req, res) {
+    var forceAlert = req.body.forceAlert;
+    var token = req.body.authToken;
+    if (token != authToken || !token) {
+        res.status = 401;
+        res.send({"Error": "Incorrect Auth Token"});
+    } else {
+        icloud.getDevices(function(error, devices) {
         if (error) {
             res.status = 404;
             res.send({"error": error});
@@ -48,6 +59,7 @@ app.get('/status/:forceAlert', function(req, res) {
 			});
         }
     });
+    }
 })
 
 var port = process.env.PORT || 8080
