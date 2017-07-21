@@ -1,0 +1,20 @@
+{
+  "name": "your-action-app",
+  "description": "Webhook to find my iPhone using another API as a microservice",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "author": "David Okun",
+  "engines": {
+    "node": "8.2.0",
+    "npm": "5.3.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "request-promise": "latest",
+    "express": "latest",
+    "body-parser": "latest"
+  }
+}
